@@ -1,0 +1,33 @@
+# more recent versions of some macOS tools
+brew 'grep'
+brew 'zsh'
+
+# essential packages
+brew 'stow'
+brew 'ripgrep'
+brew 'bat'
+brew 'zplug'
+brew 'git'
+brew 'neovim'
+brew 'python3'
+brew 'yarn'
+brew 'nvm'
+brew 'tmux'
+brew 'lsd'
+brew 'tree'
+brew 'black'
+brew 'stylua'
+brew 'lf'
+brew 'fd'
+brew 'fzf'
+
+# applications
+# alacritty should be installed seperately (view README.md)
+cask 'google-chrome'
+cask 'slack'
+cask 'spotify'
+cask 'raycast'
+cask 'discord'
+cask 'appcleaner'
+cask 'karabiner-elements'
+cask 'alt-tab'

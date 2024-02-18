@@ -1,0 +1,76 @@
+" note these keybinds will only work in a buffer
+let mapleader=" "
+
+" use system keyboard
+set clipboard+=unnamed
+set clipboard+=ideaput
+
+" common vim settings
+set incsearch
+set ignorecase
+set matchpairs
+set number 
+set relativenumber
+set so=10
+set sidescrolloff=8
+set visualbell
+set highlightedyank
+
+" idea specific settings
+set ideamarks
+set ideajoin
+set ideawrite
+set ideastatusicon=gray
+
+" plugins (equivalent to Plug 'github.com/...')
+set surround
+set commentary
+
+" window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+nnoremap gr :action FindUsages<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gc :action GotoClass<CR>
+nnoremap gp :action GotToSuperMethod<CR>
+nnoremap gt :action GotoTest<CR>
+
+" Distraction Free Mode
+nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
+
+" Get quick documentation
+nnoremap <K> :action QuickJavaDoc<CR>
+
+nnoremap <s-H> :action PreviousTab<CR>
+nnoremap <s-L> :action NextTab<CR>
+
+" View line diagnostics
+nnoremap dl :action ShowErrorDescription<CR>
+
+nnoremap <leader>h :action RecentLocations<CR>
+" nnoremap <leader>sl :action FileStructurePopup<CR>
+
+nnoremap <leader>f :action GotoFile<CR>
+nnoremap <leader>l :action GotoSymbol<CR>
+nnoremap <leader>b :action RecentFiles<CR>
+nnoremap <leader>F :action FindInPath<CR>
+
+nnoremap <leader>q :q<CR>
+nnoremap <leader>sv :action SplitVertically<CR>
+nnoremap <leader>sh :action SplitHorizontally<CR>
+
+" Map gq to wrapping.
+vmap gq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
+" com.andrewbrookins.idea.wrap.WrapParagraphAction
+
+" Map gr to rename.
+nnoremap rn :action RenameElement<CR>
+
+" Map gh to 'Open in ... Github'.
+nnoremap gh :action Github.Open.In.Browser<CR>
+
+" indentation
+vnoremap <s-TAB> <gv
+vnoremap <TAB> >gv
