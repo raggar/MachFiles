@@ -40,6 +40,8 @@ if [[ $OSTYPE == darwin* && $CPUTYPE == arm64 ]]; then
   path+=('/opt/homebrew/bin')
 fi
 
+eval "$(zoxide init zsh)"
+
 # zsh plugins
 source $ZPLUG_HOME/init.zsh 
 

@@ -11,12 +11,6 @@ working_directory = "None"
 live_config_reload = true
 ipc_socket = false
 
-# [shell]
-# program = "/usr/local/bin/zsh"
-# shell to use 
-# program = "/usr/local/bin/zsh"
-# args = ["tmux attach"]
-
 [window]
 dimensions = { columns = 280, lines = 80}
 # window startup position, if none wm will handle

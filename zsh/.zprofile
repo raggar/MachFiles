@@ -15,13 +15,13 @@ export XDG_DATA_HOME=$HOME/.local/share/
 
 # not officially support , use variable where needed
 export FD_DEFAULT_OPTS="--ignore-case --type f --hidden"
+export RIP_OPTS="--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -g '!{**/raycast/*, **/tmux/plugins/*, **/karabiner/automatic_backups/**}'"
 
 export FZF_TMUX_OPTS="-p" # use fzf-tmux by default for commands like ctrl+r
+# for history searching
 export FZF_CTRL_R_OPTS="
  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
  --color header:italic"
-
-export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/.ripgreprc
 
 export EDITOR=nvim
 export TERMINAL=alacritty

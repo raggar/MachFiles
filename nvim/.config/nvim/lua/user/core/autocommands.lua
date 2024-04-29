@@ -17,11 +17,13 @@ vim.cmd [[
   augroup end
 ]]
 
+-- restart tmux config upon edit
 vim.api.nvim_create_autocmd("BufWritePost", {
 	pattern = { "~/.config/tmux/tmux.conf" },
 	command = "execute 'silent !tmux source <afile> --silent'",
 })
 
+-- options for markdown files
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufFilePre", "BufRead" }, {
 	pattern = { "*.mdx", "*.md" },
 	callback = function()
@@ -29,12 +31,13 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufFilePre", "BufRead" }, {
 	end,
 })
 
-vim.api.nvim_create_autocmd("BufWritePost", {
-	pattern = { ".yabairc" },
-	command = "!yabai --restart-service",
-})
-
-vim.api.nvim_create_autocmd("BufWritePost", {
-	pattern = { ".skhdrc" },
-	command = "!brew services restart skhd",
-})
+--
+-- vim.api.nvim_create_autocmd("BufWritePost", {
+-- 	pattern = { ".yabairc" },
+-- 	command = "!yabai --restart-service",
+-- })
+--
+-- vim.api.nvim_create_autocmd("BufWritePost", {
+-- 	pattern = { ".skhdrc" },
+-- 	command = "!brew services restart skhd",
+-- })

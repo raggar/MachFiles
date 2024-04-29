@@ -108,7 +108,7 @@ Change keybinds as you wish i.e prev tab --> command + shift
 
 3. Go to settings -> advanced -> import settings stored in `MachFiles/raycast`
 
-## Miscellaneous
+## Machine
 
 1. Cleanup Finder (sidebar, remove tags etc.).
 
@@ -133,6 +133,37 @@ Change keybinds as you wish i.e prev tab --> command + shift
 7. Select blurred background wallpaper.
 
 8. Change Screenshots to copy to clipboard (`cmd + shift + 5`)
+
+9. Add the following to your `.gitconfig` to have better git diffs
+
+```
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+
+    # delta detects terminal colors automatically; set one of these to disable auto-detection
+    # dark = true
+    # light = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+```
+
+## Random Errors 
+
+1. Treesitter linting errors appearing in neovim help doc
+
+```
+:TSUpdate vimdoc
+```
 
 ## Window Management (Optional)
 

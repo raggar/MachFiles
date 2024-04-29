@@ -1,9 +1,7 @@
 # Easier navigation
 alias ..='cd ..'
 alias ~='cd ~'
-alias d='cd ~/Desktop'
-alias dl='cd ~/Downloads'
-alias dev='cd ~/Dev'
+alias cfg='cd ~/MachFiles'
 
 # school
 alias uw='ssh -Y r28aggar@linux.student.cs.uwaterloo.ca'
@@ -32,7 +30,8 @@ alias zrc='nvim ~/MachFiles/zsh/.config/zsh/.zshrc'
 alias gbls='brew list && npm list -g --depth 0'
 alias xcode='open -a Xcode'
 
-# search files (include hidden, ignore git)
+# search for stuff
+# note you can use ** with stuff like cd ** + tab to search for things (built into fzf)
 alias f="fd --ignore-case --type f --hidden | fzf-tmux -p --reverse | xargs nvim"
 
 # git
