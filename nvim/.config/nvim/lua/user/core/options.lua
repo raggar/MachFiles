@@ -18,7 +18,7 @@ opt.autoindent = true -- copy indent from current line when starting new one
 opt.wrap = false -- line wrapping
 
 -- appearance
-opt.cursorline = true -- highlight the current line
+opt.cursorline = false -- highlight the current line
 opt.termguicolors = true -- helps with themes
 opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 opt.showtabline = 0

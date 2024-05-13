@@ -19,7 +19,7 @@ padding = { x = 15, y = 15}
 # spread additional padding around terminal
 dynamic_padding = false
 decorations = "buttonless"
-opacity = 1.0
+opacity = 0.95
 blur = false
 startup_mode = "Windowed"
 # Window title
@@ -31,7 +31,7 @@ decorations_theme_variant = "None"
 # resize window by discrete steps equal to cell dimensions.
 resize_increments = false
 # make Option key behave as Alt.
-option_as_alt = "None"
+option_as_alt = "Both"
 
 [scrolling]
 # maximum number of lines in the scrollback buffer (0 to disable)
