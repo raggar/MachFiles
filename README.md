@@ -1,56 +1,51 @@
 # Development Workflow Setup
 
-Note that any plugins should be installed from `~/.config` NOT `~/.MachFiles/...` i.e never commit any plugins, history, or cache
+NOTE: plugins should be installed from `~/.config` NOT `~/.MachFiles/...` never commit any plugins, history, or cache
+NOTE: changes should be made in `~/.MachFiles` NOT `~/.config` to ensure changes are reflected in git
 
 ## Getting Started
 
-Clone dotfiles
-
+Install Homebrew, clone dotfiles, install apps/packages, clone with stow etc.
 ```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+path+=('/opt/homebrew/bin')
+brew update
 cd $HOME && git clone https://github.com/raggar/MachFiles.git
+brew bundle install --file=$HOME/MachFiles/brewfile/.config/brewfile/Brewfile
+cd $HOME/MachFiles/ && stow */
 ```
 
-Run setup script,
+Open a new terminal shell and run setup script.
 
 ```
-chmod +x MachFiles/scripts/.config/scripts/setup.sh
-./MachFiles/scripts/.config/scripts/setup.sh
+chmod +x ~/MachFiles/scripts/.config/scripts/setup.sh
+~/.MachFiles/scripts/.config/scripts/setup.sh
 ```
 
-Restart your computer
+Restart your computer.
 
 ## Update ZSH
 
-Perform `which zsh` to determine which binary to add. 
+Run `sudo nvim /etc/shells` and add `/opt/homebrew/opt/zsh/bin/zsh` (you can only use chsh on shells in this file).
 
-Should be `user/local/bin/zsh` for intel and `opt/homebrew/bin/zsh` for M1 macs.
+Run `chsh -s /opt/homebrew/opt/zsh/bin/zsh` 
 
-```
-sudo vim /etc/shells # lists shells which you can switch too
-# add shell
-`chsh -s shell` 
-```
-
-Restart terminal, open a new shell and run `which zsh`, verify result is correct
+Open a new shell and run `echo $SHELL` to confirm everything is set properly.
 
 ## Alacritty
 
-Install latest Alacritty (to use toml configuration)
-- can use `brew install --cask alacritty` (NOTE: this may not install the latest version)
-- download dmg from Github release page and add binary to path
-- build from source `sudo cp /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/bin/`
+Below is the manual installation for when the company cannot verify Alacritty as an app (when installed with `brew install --cask alacritty`).
 
 ```
-git clone https://github.com/alacritty/alacritty.git
-
-// install rust dependency
+git clone https://github.com/alacritty/alacritty.git $HOME
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+export PATH="$HOME/.cargo/bin:$PATH"
 rustup override set stable
 rustup update stable
-
-cd /alacritty
+cd $HOME/alacritty
 make app
 cp -r target/release/osx/Alacritty.app /Applications/
+rm -rf $HOME/alacritty
 ```
 
 Give alacritty full disk access
@@ -75,91 +70,66 @@ Install plugins by pressing `prefix + I` inside a tmux window.
 ![image](https://user-images.githubusercontent.com/35639417/147967100-96f9dd12-26f3-4e13-9d40-e05f9a174e66.png)
 ![image](https://user-images.githubusercontent.com/35639417/147967067-f6d91fe5-7668-4227-a54b-a498630a833d.png)
 
-Install all necessary plugins (you will see treesitter installing a bunch of parsers the first time neovim is loaded).
+Running neovim will setup the initial plugin installations.
 
 ```
 cd ~/.config/nvim && nvim
 ```
 
-Setup LSP servers https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+By default no lsp servers (besides for lua) are installed. Reference https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md for 
+additional installations.
 
-Disable unneeded options for specific LSP server (ex, `update_in_insert`, `virtual_text`)
-LSP's can ignore specific directories (ex, lsp.setup -> settings -> gopls -> directoryFilters)
-
-Setup any formatters using null-ls or create a autocommand (`BufWrite` on save) to use a custom binary not supported by null-ls
+Additional Notes:
+    - setup any formatters/linters as needed with Mason
+        - create a autocommand (`BufWrite` on save) to use a custom binary not supported by null-ls
+    - performance enhancements can be made for certain lsp servers i.e. ignoring directories 
+        - disable unneeded options for specific LSP server (ex, `update_in_insert`, `virtual_text`)
 
 ## Karabiner Elements
+
+Add Karabiner to login items (System Preferences --> Login Items)
 
 Launch Karabiner elements and grant full permissions.
 
 ## Alt-tab
 
-Ensure start at login is checked and blacklist all required applications
+Add Alt-tab to login items (System Preferences --> Login Items)
 
-Make sure to set shortcut to "Command Tab" to override default MacOS Switcher
+Set shortcut to "Command Tab" to override default MacOS Switcher
 
-Change keybinds as you wish i.e prev tab --> command + shift   
+Change keybinds i.e prev tab --> command + shift   
 
 ## Raycast
 
-1. Disable Spotlight, uncheck `System Preferences -> Spotlight -> Keyboard Shortcuts -> Show Spotlight Search`.
+Disable Spotlight keybind with `System Preferences -> Keyboard Shortcuts -> Spotlight`.
 
-2. Ensure Raycast runs at login and is bound to `Command + Space`.
+Add Raycast to login items (System Preferences --> Login Items) if not done automatically
 
-3. Go to settings -> advanced -> import settings stored in `MachFiles/raycast`
+Change keybind to `Command + Space`
+
+Go to raycast settings -> advanced -> import settings stored in `MachFiles/raycast`
 
 ## Machine
 
-1. Cleanup Finder (sidebar, remove tags etc.).
+Cleanup Finder (sidebar, remove tags etc.).
 
-2. Cleanup dock and minimize
+Cleanup menubar (remove spotlight, sound, etc.), add bluetooth
 
-3. Cleanup menubar (add bluetooth icon and remove sound).
-
-4. Setup Google Chrome
-    - Setup bookmarks
-    - Install Momentum, 1Password etc.
+Setup Google Chrome
+    - Enable bookmarks bar
     - Install Vimium
         - import vimium css and blocked websites (if on personal)
 
-5. MacOS Settings
+MacOS Settings
     - Uncheck `shake mouse pointer to locate` go into `Accessibility` -> `Display`.
-    - Hide dock
+    - Minimize doc and hide automatically
     - Increase Key Repeat (makes vim feel smooth) --> `System Preferences -> Keyboard`, maximize `Key Repeat`, and minimize `Delay until repeat`.
-    - Hide desktop items
 
-6. Change Spotify to not open on startup.
-
-7. Select blurred background wallpaper.
-
-8. Change Screenshots to copy to clipboard (`cmd + shift + 5`)
-
-9. Add the following to your `.gitconfig` to have better git diffs
-
-```
-[core]
-    pager = delta
-
-[interactive]
-    diffFilter = delta --color-only
-
-[delta]
-    navigate = true    # use n and N to move between diff sections
-
-    # delta detects terminal colors automatically; set one of these to disable auto-detection
-    # dark = true
-    # light = true
-
-[merge]
-    conflictstyle = diff3
-
-[diff]
-    colorMoved = default
-```
+Change Screenshots to copy to clipboard (`cmd + shift + 5`)
 
 ## Random Errors 
 
-1. Treesitter linting errors appearing in neovim help doc
+Treesitter linting errors appearing in neovim help doc
 
 ```
 :TSUpdate vimdoc
@@ -167,10 +137,10 @@ Change keybinds as you wish i.e prev tab --> command + shift
 
 ## Window Management (Optional)
 
-1. Open several desktops
-2. Keyboard Settings -> Shortcuts -> Mission Control -> Enable shortcuts for switching spaces
-3. System Settings -> Accessibility -> Display -> Turn on "Reduce motion"
-4. System Settings -> Mission Control -> Turn off "Automatically rearrange spaces based on recent use", enable "Displays have seperate spaces", and enable "Switch to a Space with open windows for the application"
+Open several desktops
+Keyboard Settings -> Shortcuts -> Mission Control -> Enable shortcuts for switching spaces
+System Settings -> Accessibility -> Display -> Turn on "Reduce motion"
+System Settings -> Mission Control -> Turn off "Automatically rearrange spaces based on recent use", enable "Displays have seperate spaces", and enable "Switch to a Space with open windows for the application"
 
 ## **Tips for Work Machine**
 - Hook into build systems (ex, bazel) to increase performance if using neovim as editor

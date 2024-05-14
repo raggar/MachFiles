@@ -29,7 +29,7 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Disable machine sleep while charging
-sudo pmset -c sleep 0
+# sudo pmset -c sleep 0
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
@@ -93,20 +93,20 @@ chflags nohidden ~/Library
 # Minimize windows into their application’s icon
 # defaults write com.apple.dock minimize-to-application -bool true
 
-# Show indicator lights for open applications in the Dock
-defaults write com.apple.dock show-process-indicators -bool true
-
-# Don’t animate opening applications from the Dock
-defaults write com.apple.dock launchanim -bool false
-
-# Speed up Mission Control animations
-# defaults write com.apple.dock expose-animation-duration -float 0.1
-
-# Remove the auto-hiding Dock delay
-defaults write com.apple.dock autohide-delay -float 0
-
-# Don’t show recent applications in Dock
-defaults write com.apple.dock show-recents -bool false
+# # Show indicator lights for open applications in the Dock
+# defaults write com.apple.dock show-process-indicators -bool true
+#
+# # Don’t animate opening applications from the Dock
+# defaults write com.apple.dock launchanim -bool false
+#
+# # Speed up Mission Control animations
+# # defaults write com.apple.dock expose-animation-duration -float 0.1
+#
+# # Remove the auto-hiding Dock delay
+# defaults write com.apple.dock autohide-delay -float 0
+#
+# # Don’t show recent applications in Dock
+# defaults write com.apple.dock show-recents -bool false
 
 # Show the main window when launching Activity Monitor
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true

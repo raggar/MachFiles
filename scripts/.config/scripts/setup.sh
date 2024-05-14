@@ -1,18 +1,3 @@
-echo "Running setup script ..."
-
-echo "Installing brew .."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew update
-
-# Install brew packages and casks
-echo "Installing brew packages ..."
-brew bundle install --file=$HOME/MachFiles/brewfile/.config/brewfile/Brewfile
-
-echo "Symlinking dotfiles ..."
-cd $HOME/MachFiles/ && stow */
-
-cd ..
-
 # Remove Message of the day prompt
 touch $HOME/.hushlogin
 
@@ -60,12 +45,5 @@ gitsetup() {
     echo "Now copying SSH key to clipboard..."
     pbcopy < ~/.ssh/id_rsa.pub
 }
-
-echo "Performing git setup ..."
-gitsetup
-
-echo "Setting sane mac defauls ..."
-chmod +x ~/.config/scripts/osx.sh
-./osx.sh
 
 echo "Done :), please restart your computer"

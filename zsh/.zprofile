@@ -1,14 +1,13 @@
 # this file is sourced once at login
 # should contain exports that will rarely be changed
-
 export ZDOTDIR=$HOME/.config/zsh/
 
 export BAT_CONFIG_PATH=~/.config/bat/config
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
 
 # use bat with man page
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-export ZPLUG_HOME=$(brew --prefix)/opt/zplug # if brew was used
 export XDG_CONFIG_HOME=$HOME/.config/ # neovim will look in here for init
 export XDG_CACHE_HOME=$HOME/.cache/
 export XDG_DATA_HOME=$HOME/.local/share/

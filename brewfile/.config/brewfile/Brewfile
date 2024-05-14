@@ -1,3 +1,5 @@
+tap 'homebrew/cask-fonts'
+
 # more recent versions of some macOS tools
 brew 'grep'
 brew 'zsh'
@@ -6,8 +8,8 @@ brew 'zsh'
 brew 'stow'
 brew 'ripgrep'
 brew 'bat'
-brew 'zplug'
 brew 'git'
+brew 'zplug'
 brew 'neovim'
 brew 'python3'
 brew 'yarn'
@@ -17,19 +19,21 @@ brew 'tmux'
 brew 'lsd'
 brew 'tree'
 brew 'git-delta'
-brew zoxide
+brew 'zoxide'
 brew 'stylua'
 brew 'lf'
 brew 'fd'
 brew 'fzf'
 
 # applications
-# alacritty should be installed seperately (view README.md)
 cask 'google-chrome'
 cask 'slack'
 cask 'spotify'
 cask 'raycast'
-cask 'discord'
 cask 'appcleaner'
 cask 'karabiner-elements'
 cask 'alt-tab'
+
+# fonts
+cask 'font-hack-nerd-font'
+cask 'font-meslo-lg-nerd-font'

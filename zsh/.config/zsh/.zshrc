@@ -1,3 +1,16 @@
+# Load zsh functions
+fpath=($fpath "/Users/raggarwal/.config/zsh/.zfunctions")
+
+# paths
+path+=('~/Library/Python/3.8/bin')
+path+=('./node_modules/.bin')
+path+=('.nvm/versions/node/v16.17.0/bin')
+
+# For M1 Macs add homebrew to path
+if [[ $OSTYPE == darwin* && $CPUTYPE == arm64 ]]; then
+  path+=('/opt/homebrew/bin')
+fi
+
 # Load external files
 source "$HOME/.config/zsh/vim-mode.zsh"
 source "$HOME/.config/zsh/functions.zsh"
@@ -27,32 +40,17 @@ autoload -Uz colors && colors
 # Run ls on directory change
 chpwd() lsd
 
-# Load zsh functions
-fpath=($fpath "/Users/raggarwal/.config/zsh/.zfunctions")
-
-# paths
-path+=('~/Library/Python/3.8/bin')
-path+=('./node_modules/.bin')
-path+=('.nvm/versions/node/v16.17.0/bin')
-
-# For M1 Macs add homebrew to path
-if [[ $OSTYPE == darwin* && $CPUTYPE == arm64 ]]; then
-  path+=('/opt/homebrew/bin')
-fi
-
 eval "$(zoxide init zsh)"
 
-# zsh plugins
-source $ZPLUG_HOME/init.zsh 
-
+source $ZPLUG_HOME/init.zsh
 zplug "hlissner/zsh-autopair"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-completions"
 zplug "undg/zsh-nvm-lazy-load" # loading nvm takes a long time, do it lazily
-#
-# # Plugins
-# # Install plugins if there are plugins that have not been installed
+
+# Plugins
+# Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
