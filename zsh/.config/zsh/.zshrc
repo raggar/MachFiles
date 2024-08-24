@@ -43,6 +43,7 @@ fi
 eval "$(zoxide init zsh)"
 
 # zsh plugins
+export ZPLUG_HOME=$HOMEBREW_PREFIX/opt/zplug
 source $ZPLUG_HOME/init.zsh 
 
 zplug "hlissner/zsh-autopair"

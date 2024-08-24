@@ -35,28 +35,16 @@ Restart terminal, open a new shell and run `which zsh`, verify result is correct
 
 ## Alacritty
 
-Install latest Alacritty (to use toml configuration)
-- can use `brew install --cask alacritty` (NOTE: this may not install the latest version)
-- download dmg from Github release page and add binary to path
-- build from source `sudo cp /Applications/Alacritty.app/Contents/MacOS/alacritty /usr/bin/`
+When getting the error about alacritty not being allowed. Do the following
 
 ```
-git clone https://github.com/alacritty/alacritty.git
-
-// install rust dependency
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-rustup override set stable
-rustup update stable
-
-cd /alacritty
-make app
-cp -r target/release/osx/Alacritty.app /Applications/
+sudo spctl --master-disable
 ```
 
-Give alacritty full disk access
+Open alacritty, then run 
 
 ```
-System Preferences -> Security & Privacy -> Privacy -> Full Disk Access
+sudo spctl --master-enable
 ```
 
 ## Tmux
@@ -104,9 +92,9 @@ Change keybinds as you wish i.e prev tab --> command + shift
 
 1. Disable Spotlight, uncheck `System Preferences -> Spotlight -> Keyboard Shortcuts -> Show Spotlight Search`.
 
-2. Ensure Raycast runs at login and is bound to `Command + Space`.
+2. Go to settings -> advanced -> import settings stored in `MachFiles/raycast`
 
-3. Go to settings -> advanced -> import settings stored in `MachFiles/raycast`
+3. Enable vim keybindings
 
 ## Machine
 

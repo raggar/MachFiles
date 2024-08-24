@@ -2,6 +2,7 @@ echo "Running setup script ..."
 
 echo "Installing brew .."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 brew update
 
 # Install brew packages and casks
@@ -63,9 +64,5 @@ gitsetup() {
 
 echo "Performing git setup ..."
 gitsetup
-
-echo "Setting sane mac defauls ..."
-chmod +x ~/.config/scripts/osx.sh
-./osx.sh
 
 echo "Done :), please restart your computer"

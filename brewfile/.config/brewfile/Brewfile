@@ -17,17 +17,17 @@ brew 'tmux'
 brew 'lsd'
 brew 'tree'
 brew 'git-delta'
-brew zoxide
+brew 'zoxide'
 brew 'stylua'
 brew 'lf'
 brew 'fd'
 brew 'fzf'
 
 # applications
-# alacritty should be installed seperately (view README.md)
 cask 'google-chrome'
 cask 'slack'
 cask 'spotify'
+cask 'alacritty'
 cask 'raycast'
 cask 'discord'
 cask 'appcleaner'
