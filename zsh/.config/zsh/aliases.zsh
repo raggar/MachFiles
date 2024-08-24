@@ -18,6 +18,7 @@ alias df='df -h'     # human-readable sizes
 alias free='free -m' # show sizes in MB
 
 alias lg='lazygit'
+alias auth='gh auth login --web --git-protocol ssh'
 
 # confirm before overwriting something
 alias cp='cp -i'
@@ -34,17 +35,16 @@ alias xcode='open -a Xcode'
 # note you can use ** with stuff like cd ** + tab to search for things (built into fzf)
 alias f="fd --ignore-case --type f --hidden | fzf-tmux -p --reverse | xargs nvim"
 
-# git
+# graphite
 alias gc="git branch --sort=-committerdate | grep --invert-match '\*' | cut -c 3- | fzf-tmux -p --reverse | xargs git checkout"
 alias gm="git branch --sort=-committerdate | grep --invert-match '\*' | cut -c 3- | fzf-tmux -p --reverse | xargs git merge"
 alias gdel="git branch --sort=-committerdate | grep --invert-match '\*' | cut -c 3- | fzf-tmux -p --reverse | xargs git branch -D"
 alias gs='git status'
-alias gca='fmt && git add -u && git commit'
 alias ga='git commit --amend -a --no-edit'
 alias gcb='git checkout -b'
 alias gcl='git clone'
-alias glg='git log'
-alias gd='git diff -- ':!package-lock.json' ':!yarn.lock''
+alias glg='git log | bat'
+alias gd='git diff -- ':!package-lock.json' ':!yarn.lock' | bat'
 alias gpl='git pull origin'
 alias gra='git remote add origin'
 alias undo='git reset --soft HEAD~1'
@@ -66,3 +66,4 @@ alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=sta
 
 # ports 
 alias fport='() { sudo lsof -i:$@ }'
+alias c='clear && tmux clear-history'

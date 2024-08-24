@@ -29,13 +29,19 @@ return {
 			-- lsp servers
 			ensure_installed = {
 				"lua_ls",
+				"pyright",
+				"tsserver",
 			},
 		}
 
 		-- formatters and linters
 		mason_tool_installer.setup {
 			ensure_installed = {
+				"prettier",
+				"eslint_d",
 				"stylua", -- lua formatter
+				"black",
+				"flake8",
 			},
 		}
 	end,

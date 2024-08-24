@@ -7,11 +7,6 @@ function timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
-#
-function c() {
-   tmux clear-history
-   clear
-}
 
 # Create a new directory and enter it
 function mkd() {

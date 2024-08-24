@@ -6,6 +6,8 @@ set clipboard+=unnamed
 set clipboard+=ideaput
 
 " common vim settings
+set splitbelow
+set splitright
 set incsearch
 set ignorecase
 set matchpairs
@@ -25,17 +27,41 @@ set ideastatusicon=gray
 " plugins (equivalent to Plug 'github.com/...')
 set surround
 set commentary
+set NERDTree
 
-" window navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+nnoremap [[ <Action>(MethodUp)
+norenmap ]] <Action>(MethodDown)
+
+" move lines up and down
+vnoremap J :m'>+<CR>gv=gv
+vnoremap K :m-2<CR>gv=gv
 
 nnoremap gr :action FindUsages<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gd :action GotoDeclaration<CR>
-nnoremap gc :action GotoClass<CR>
 nnoremap gp :action GotToSuperMethod<CR>
 nnoremap gt :action GotoTest<CR>
+
+nnoremap <leader>f :action GotoFile<CR>
+nnoremap <leader>l :action GotoSymbol<CR>
+nnoremap <leader>b :action RecentFiles<CR>
+nnoremap <leader>F :action FindInPath<CR>
+
+nnoremap <leader>hl :action ShowBookmarks<CR>
+nnoremap <leader>ha :action ToggleBookmark<CR>
+
+nnoremap <leader>1 :action ToggleBookmark1<cr>
+nnoremap <leader>2 :action ToggleBookmark2<cr>
+nnoremap <leader>3 :action ToggleBookmark3<cr>
+nnoremap <leader>4 :action ToggleBookmark4<cr>
+
+nnoremap <leader>eo :NERDTreeToggle<CR>
+
+nnoremap <leader>q :q<CR>
+nnoremap <leader>sv :action SplitVertically<CR>
+nnoremap <leader>sh :action SplitHorizontally<CR>
+nnoremap <C-o> :action Back<CR>
+nnoremap <C-i> :action Forward<CR>
 
 " Distraction Free Mode
 nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
@@ -49,17 +75,7 @@ nnoremap <s-L> :action NextTab<CR>
 " View line diagnostics
 nnoremap dl :action ShowErrorDescription<CR>
 
-nnoremap <leader>h :action RecentLocations<CR>
 " nnoremap <leader>sl :action FileStructurePopup<CR>
-
-nnoremap <leader>f :action GotoFile<CR>
-nnoremap <leader>l :action GotoSymbol<CR>
-nnoremap <leader>b :action RecentFiles<CR>
-nnoremap <leader>F :action FindInPath<CR>
-
-nnoremap <leader>q :q<CR>
-nnoremap <leader>sv :action SplitVertically<CR>
-nnoremap <leader>sh :action SplitHorizontally<CR>
 
 " Map gq to wrapping.
 vmap gq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
@@ -71,6 +87,19 @@ nnoremap rn :action RenameElement<CR>
 " Map gh to 'Open in ... Github'.
 nnoremap gh :action Github.Open.In.Browser<CR>
 
+" Preserve paste register
+nnoremap x \"_x
+nnoremap <leader>p \"dP
+
 " indentation
 vnoremap <s-TAB> <gv
 vnoremap <TAB> >gv
+
+" sethandler <c-h> a:vim
+" sethandler <c-l> a:vim
+" sethandler <c-j> a:vim
+" sethandler <c-k> a:vim
+" nnoremap <c-h> <c-w>h
+" nnoremap <c-l> <c-w>l
+" nnoremap <c-j> <c-w>j
+" nnoremap <c-k> <c-w>k

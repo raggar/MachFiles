@@ -27,7 +27,7 @@ return {
 
 				-- set keybinds
 				opts.desc = "Show LSP references"
-				keymap.set("n", "gR", vim.lsp.buf.references, opts) -- show definition, references
+				keymap.set("n", "gr", vim.lsp.buf.references, opts) -- show definition, references
 
 				opts.desc = "Go to declaration"
 				keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
