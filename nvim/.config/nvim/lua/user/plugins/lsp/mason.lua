@@ -28,9 +28,7 @@ return {
 		mason_lspconfig.setup {
 			-- lsp servers
 			ensure_installed = {
-				"gopls",
 				"lua_ls",
-				"tsserver",
 			},
 		}
 

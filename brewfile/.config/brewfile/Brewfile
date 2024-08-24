@@ -24,6 +24,7 @@ brew 'fd'
 brew 'fzf'
 
 # applications
+cask 'font-hack-nerd-font'
 cask 'google-chrome'
 cask 'slack'
 cask 'spotify'
