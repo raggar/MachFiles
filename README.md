@@ -123,6 +123,7 @@ Setup Google Chrome
 MacOS Settings
     - Uncheck `shake mouse pointer to locate` go into `Accessibility` -> `Display`.
     - Minimize doc and hide automatically
+    - Disable Hot Corners
     - Increase Key Repeat (makes vim feel smooth) --> `System Preferences -> Keyboard`, maximize `Key Repeat`, and minimize `Delay until repeat`.
 
 Change Screenshots to copy to clipboard (`cmd + shift + 5`)

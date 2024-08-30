@@ -2,14 +2,7 @@
 fpath=($fpath "/Users/raggarwal/.config/zsh/.zfunctions")
 
 # paths
-path+=('~/Library/Python/3.8/bin')
-path+=('./node_modules/.bin')
 path+=('.nvm/versions/node/v16.17.0/bin')
-
-# For M1 Macs add homebrew to path
-if [[ $OSTYPE == darwin* && $CPUTYPE == arm64 ]]; then
-  path+=('/opt/homebrew/bin')
-fi
 
 # Load external files
 source "$HOME/.config/zsh/vim-mode.zsh"
@@ -42,6 +35,13 @@ chpwd() lsd
 
 eval "$(zoxide init zsh)"
 
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+eval "$(pyenv init --path)"
+
+# Created by `pipx` on 2024-05-14 13:39:59
+export PATH="$PATH:/Users/raggarwal/.local/bin"
+
 source $ZPLUG_HOME/init.zsh
 zplug "hlissner/zsh-autopair"
 zplug "zsh-users/zsh-autosuggestions"
@@ -61,3 +61,6 @@ fi
 # Then, source plugins and add commands to $PATH
 # Keep this as last line!
 zplug load
+
+# bun completions
+[ -s "/Users/raggarwal/.bun/_bun" ] && source "/Users/raggarwal/.bun/_bun"
