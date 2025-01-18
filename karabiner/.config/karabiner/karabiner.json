@@ -1,284 +1,156 @@
 {
-  "global": {
-    "ask_for_confirmation_before_quitting": true,
-    "check_for_updates_on_startup": true,
-    "show_in_menu_bar": true,
-    "show_profile_name_in_menu_bar": false,
-    "unsafe_ui": false
-  },
-  "profiles": [
-    {
-      "complex_modifications": {
-        "parameters": {
-          "basic.simultaneous_threshold_milliseconds": 50,
-          "basic.to_delayed_action_delay_milliseconds": 500,
-          "basic.to_if_alone_timeout_milliseconds": 1000,
-          "basic.to_if_held_down_threshold_milliseconds": 500,
-          "mouse_motion_to_scroll.speed": 100
-        },
-        "rules": [
-          {
-            "description": "Escape Key",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "caps_lock"
-                },
-                "to": [
-                  {
-                    "key_code": "escape"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "CTRL + J/K/H/L to Arrows",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "file_paths": [
-                      "/Applications/Alacritty.app/Contents/MacOS/alacritty",
-                      "/Applications/GoLand.app/Contents/MacOS/goland"
-
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ],
-                "from": {
-                  "key_code": "l",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "right_arrow"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "file_paths": [
-                      "/Applications/Alacritty.app/Contents/MacOS/alacritty",
-                      "/Applications/GoLand.app/Contents/MacOS/goland"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ],
-                "from": {
-                  "key_code": "h",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "left_arrow"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "file_paths": [
-                      "/Applications/Alacritty.app/Contents/MacOS/alacritty",
-                      "/Applications/GoLand.app/Contents/MacOS/goland"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ],
-                "from": {
-                  "key_code": "j",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "down_arrow"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "file_paths": [
-                      "/Applications/Alacritty.app/Contents/MacOS/alacritty",
-                      "/Applications/GoLand.app/Contents/MacOS/goland"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ],
-                "from": {
-                  "key_code": "k",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "up_arrow"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Switch Desktops",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "e",
-                  "modifiers": {
-                    "mandatory": ["command"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "left_arrow",
-                    "modifiers": "left_control"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "from": {
-                  "key_code": "r",
-                  "modifiers": {
-                    "mandatory": ["command"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "right_arrow",
-                    "modifiers": "left_control"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          }
-        ]
-      },
-      "devices": [
+    "profiles": [
         {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "identifiers": {
-            "is_keyboard": true,
-            "is_pointing_device": false,
-            "product_id": 636,
-            "vendor_id": 1452
-          },
-          "ignore": false,
-          "manipulate_caps_lock_led": true,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": false
-        },
-        {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "identifiers": {
-            "is_keyboard": false,
-            "is_pointing_device": true,
-            "product_id": 636,
-            "vendor_id": 1452
-          },
-          "ignore": true,
-          "manipulate_caps_lock_led": false,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": false
-        },
-        {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "identifiers": {
-            "is_keyboard": true,
-            "is_pointing_device": true,
-            "product_id": 45079,
-            "vendor_id": 1133
-          },
-          "ignore": true,
-          "manipulate_caps_lock_led": false,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": false
-        },
-        {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "identifiers": {
-            "is_keyboard": true,
-            "is_pointing_device": true,
-            "product_id": 8705,
-            "vendor_id": 4617
-          },
-          "ignore": false,
-          "manipulate_caps_lock_led": true,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": true
-        },
-        {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "identifiers": {
-            "is_keyboard": false,
-            "is_pointing_device": true,
-            "product_id": 8705,
-            "vendor_id": 4617
-          },
-          "ignore": false,
-          "manipulate_caps_lock_led": false,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": false
-        },
-        {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "identifiers": {
-            "is_keyboard": true,
-            "is_pointing_device": false,
-            "product_id": 34304,
-            "vendor_id": 1452
-          },
-          "ignore": true,
-          "manipulate_caps_lock_led": false,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": false
-        },
-        {
-          "disable_built_in_keyboard_if_exists": false,
-          "fn_function_keys": [],
-          "identifiers": {
-            "is_keyboard": false,
-            "is_pointing_device": true,
-            "product_id": 617,
-            "vendor_id": 76
-          },
-          "ignore": true,
-          "manipulate_caps_lock_led": false,
-          "simple_modifications": [],
-          "treat_as_built_in_keyboard": false
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Escape Key",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "caps_lock" },
+                                "to": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "CTRL + J/K/H/L to Arrows",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "file_paths": ["/Applications/Alacritty.app/Contents/MacOS/alacritty", "/Applications/GoLand.app/Contents/MacOS/goland"],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": { "mandatory": ["left_control"] }
+                                },
+                                "to": [{ "key_code": "right_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "file_paths": ["/Applications/Alacritty.app/Contents/MacOS/alacritty", "/Applications/GoLand.app/Contents/MacOS/goland"],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": { "mandatory": ["left_control"] }
+                                },
+                                "to": [{ "key_code": "left_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "file_paths": ["/Applications/Alacritty.app/Contents/MacOS/alacritty", "/Applications/GoLand.app/Contents/MacOS/goland"],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": { "mandatory": ["left_control"] }
+                                },
+                                "to": [{ "key_code": "down_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "file_paths": ["/Applications/Alacritty.app/Contents/MacOS/alacritty", "/Applications/GoLand.app/Contents/MacOS/goland"],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": { "mandatory": ["left_control"] }
+                                },
+                                "to": [{ "key_code": "up_arrow" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Switch Desktops",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": { "mandatory": ["command"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": "left_control"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": { "mandatory": ["command"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": "left_control"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 45079,
+                        "vendor_id": 1133
+                    },
+                    "manipulate_caps_lock_led": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 8705,
+                        "vendor_id": 4617
+                    },
+                    "ignore": false,
+                    "treat_as_built_in_keyboard": true
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 8705,
+                        "vendor_id": 4617
+                    },
+                    "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 34304,
+                        "vendor_id": 1452
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false
+                }
+            ],
+            "name": "Default profile",
+            "selected": true,
+            "virtual_hid_keyboard": {
+                "country_code": 0,
+                "keyboard_type_v2": "ansi"
+            }
         }
-      ],
-      "name": "Default profile",
-      "parameters": {
-        "delay_milliseconds_before_open_device": 1000
-      },
-      "selected": true,
-      "simple_modifications": [],
-      "virtual_hid_keyboard": {
-        "country_code": 0,
-        "indicate_sticky_modifier_keys_state": true,
-        "mouse_key_xy_scale": 100
-      }
-    }
-  ]
+    ]
 }

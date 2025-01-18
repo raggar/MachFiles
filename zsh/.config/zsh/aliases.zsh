@@ -5,6 +5,7 @@ alias cfg='cd ~/MachFiles'
 
 # school
 alias uw='ssh -Y r28aggar@linux.student.cs.uwaterloo.ca'
+alias ds='ssh -D 1080 r28aggar@datasci.cs.uwaterloo.ca'
 alias transfer='() { scp $@ r28aggar@linux.student.cs.uwaterloo.ca:~/cs247 }'
 
 # tmux aliases

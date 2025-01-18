@@ -24,9 +24,7 @@ brew 'fd'
 brew 'fzf'
 
 # applications
-cask 'font-hack-nerd-font'
 cask 'google-chrome'
-cask 'slack'
 cask 'spotify'
 cask 'alacritty'
 cask 'raycast'
@@ -34,3 +32,9 @@ cask 'discord'
 cask 'appcleaner'
 cask 'karabiner-elements'
 cask 'alt-tab'
+cask 'visual-studio-code'
+cask 'the-unarchiver'
+
+# fonts
+cask 'font-hack-nerd-font'
+cask 'font-meslo-lg-nerd-font'

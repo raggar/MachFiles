@@ -19,7 +19,7 @@ padding = { x = 15, y = 15}
 # spread additional padding around terminal
 dynamic_padding = false
 decorations = "buttonless"
-opacity = 0.95
+opacity = 0.97
 blur = false
 startup_mode = "Windowed"
 # Window title

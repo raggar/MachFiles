@@ -45,6 +45,7 @@ eval "$(zoxide init zsh)"
 # zsh plugins
 export ZPLUG_HOME=$HOMEBREW_PREFIX/opt/zplug
 source $ZPLUG_HOME/init.zsh 
+source $HOME/.cargo/env
 
 zplug "hlissner/zsh-autopair"
 zplug "zsh-users/zsh-autosuggestions"

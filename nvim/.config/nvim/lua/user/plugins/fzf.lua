@@ -12,7 +12,7 @@ return {
 				-- set to 'false' to disable
 				multiprocess = true, -- run command in a separate process
 				git_icons = true, -- show git icons?
-				file_icons = false, -- show file icons?
+				file_icons = true, -- show file icons?
 				color_icons = true, -- colorize file|git icons
 				fd_opts = os.getenv "FD_DEFAULT_OPTS",
 				-- cwd_header = true,

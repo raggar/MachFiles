@@ -28,6 +28,7 @@ return {
 		mason_lspconfig.setup {
 			-- lsp servers
 			ensure_installed = {
+				"pyright",
 				"lua_ls",
 			},
 		}
@@ -36,6 +37,7 @@ return {
 		mason_tool_installer.setup {
 			ensure_installed = {
 				"stylua", -- lua formatter
+				"prettierd",
 			},
 		}
 	end,
