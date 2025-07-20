@@ -28,16 +28,10 @@ Open a new shell and run `echo $SHELL` to confirm everything is set properly.
 
 ## Alacritty
 
-When getting the error about alacritty not being allowed. Do the following
+When getting the error about alacritty not being allowed, enable via security settings. If it does not work try
 
 ```
 sudo spctl --master-disable
-```
-
-Open alacritty, then run 
-
-```
-sudo spctl --master-enable
 ```
 
 ## Tmux
@@ -102,13 +96,14 @@ Cleanup menubar (add bluetooth icon and remove sound).
 
 Setup Arc Browser
     - Extensions: Ad block, Bitwarden, Vimium
+    - Set to default browser `System Settings -> Desktop & Dock -> Default Browser`
     - Change links to use default space: Preferences > Links > Air Traffic Control > Default: Most Recent Space
     - Setup bookmarks
 
 MacOS Settings
     - Uncheck `shake mouse pointer to locate` go into `Accessibility` -> `Display`.
-    - Hide dock
     - Increase Key Repeat (makes vim feel smooth) --> `System Preferences -> Keyboard`, maximize `Key Repeat`, and minimize `Delay until repeat`.
+    - Hide dock
     - Hide desktop items
 
 Change Screenshots to copy to clipboard (`cmd + shift + 5`)

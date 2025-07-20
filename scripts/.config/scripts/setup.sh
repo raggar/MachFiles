@@ -54,7 +54,4 @@ gitsetup() {
     pbcopy < ~/.ssh/id_rsa.pub
 }
 
-echo "Performing git setup ..."
-gitsetup
-
 echo "Done :), please restart your computer"
