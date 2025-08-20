@@ -35,8 +35,8 @@ option_as_alt = "Both"
 
 [scrolling]
 # maximum number of lines in the scrollback buffer (0 to disable)
-history = 0
-multiplier = 0
+history = 100000
+multiplier = 3
 
 [font]
 normal = { family = "Hack Nerd Font", style = "Regular" }

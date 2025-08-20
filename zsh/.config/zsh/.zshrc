@@ -21,6 +21,18 @@ prompt='%F{cyan}%~ %F{magenta}${vcs_info_msg_0_}%F{white}$ '
 # Colours
 autoload -Uz colors && colors
 
+# Where to store history
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+# Share history instantly between all zsh sessions
+setopt INC_APPEND_HISTORY       # append commands as they are typed, not at exit
+setopt SHARE_HISTORY            # share history between all sessions
+setopt HIST_IGNORE_ALL_DUPS     # don’t store duplicate commands
+setopt HIST_REDUCE_BLANKS       # trim superfluous blanks
+setopt HIST_IGNORE_SPACE        # ignore commands starting with space
+
 # Enable fzf keybinds
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

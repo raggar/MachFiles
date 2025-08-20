@@ -10,6 +10,8 @@
 .config/tmux/plugins
 
 .config/hacker-nerd-fonts
+.config/npm
+.config/raycast
 
 .config/zsh/.zcompdump-Rahul’s MacBook Pro-5.8
 .config/zsh/.zcompdump
