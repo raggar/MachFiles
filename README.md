@@ -1,4 +1,4 @@
-# Development Workflow Setup
+# New Mac Setup
 
 NOTE: plugins should be installed from `~/.config` NOT `~/.MachFiles/...` never commit any plugins, history, or cache
 NOTE: changes should be made in `~/.MachFiles` NOT `~/.config` to ensure changes are reflected in git
@@ -8,7 +8,7 @@ NOTE: changes should be made in `~/.MachFiles` NOT `~/.config` to ensure changes
 Clone dotfiles
 
 ```
-cd $HOME && git clone https://github.com/raggar/MachFiles.git
+cd $HOME && git clone git@github.com:raggar/MachFiles.git
 ```
 
 Run setup script,
