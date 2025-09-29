@@ -140,8 +140,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-. "$HOME/.local/share//../bin/env"
-
 # bun completions
 [ -s "/Users/rahulaggarwal/.bun/_bun" ] && source "/Users/rahulaggarwal/.bun/_bun"
 
