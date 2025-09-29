@@ -11,14 +11,16 @@ Clone dotfiles
 cd $HOME && git clone git@github.com:raggar/MachFiles.git
 ```
 
-Run setup script,
+Run setup script to install casks, packages, and create "stow" symlinks
 
 ```
 chmod +x MachFiles/scripts/.config/scripts/setup.sh
 ./MachFiles/scripts/.config/scripts/setup.sh
 ```
 
-Restart your computer
+Restart your computer.
+
+NOTE: If any functionality is back to its default behaviour, most likely the files were not stowed correctly
 
 ## Update ZSH
 
