@@ -2,6 +2,8 @@
 alias ..='cd ..'
 alias ~='cd ~'
 alias cfg='cd ~/MachFiles'
+alias bdb='cd ~/bifrost/apps/api/'
+alias pdb='cd ~/product/packages/db/'
 
 # school
 alias uw='ssh -Y r28aggar@linux.student.cs.uwaterloo.ca'
